@@ -1,9 +1,10 @@
 // Declare global variables
 let numRows = 0;
 let numCols = 0;
-let colorSelected; 
+let colorSelected = '#ffffff';
 let table = document.getElementById("grid");
 let tableRow = document.getElementsByTagName("tr");
+
 
 // Add a row
 function addR() {
@@ -77,10 +78,28 @@ function removeC() {
 
 }
 
+
 // Set global variable for selected color
 function selectColor(){
-    colorSelected = document.getElementById("selectedColorId").value;
-    console.log(colorSelected);
+    // Get the selected color from the dropdown menu and wheel
+    let selectInput = document.getElementById("selectedColorId");
+    let wheelInput = document.getElementById("colorWheelId");
+    
+    //if colorwheel is chosen use that color
+    if (selectInput.value === "COLOR WHEEL"){
+        colorSelected = wheelInput.value;
+    } else { //else take the color from the dropdown menu and make colorwheel that color
+        colorSelected = selectInput.value;
+        wheelInput.value = selectInput.value;
+    }
+    
+}
+
+//if color wheel is selected then change the dropdown menu to select and call selectColor()
+function selectColorWheel(){
+    let selectInput = document.getElementById("selectedColorId");
+    selectInput.value = "SELECT";
+    selectColor();    
 }
 
 // Fill all uncolored cells
