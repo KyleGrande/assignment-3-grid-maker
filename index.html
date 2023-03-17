@@ -13,15 +13,16 @@
     <button onclick="fillU()">Fill All Uncolored</button>
     <button onclick="fillAll()">Fill All</button>
     <button onclick="clearAll()">Clear</button>
+    <input id="colorWheelId" type="color" value="#ffffff" onchange="selectColorWheel()">
     <select onchange="selectColor()" id="selectedColorId">
-        <option value="SELECT">Color Wheel</option>
+        <option value="COLOR WHEEL">Color Wheel</option>
         <option value=#FF0000>Red</option>
         <option value=#0000FF>Blue</option>
         <option value=#00FF00>Green</option>
         <option value=#FFFF00>Yellow</option>
         <option value=#000000>Black</option>
         <option value=#00FFFF>Cyan</option>
-        <option value="#F19CBB">Pink</option>
+        <option value=#F19CBB>Pink</option>
     </select>
     <!-- Grid Table -->
     <table id="grid">
