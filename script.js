@@ -95,10 +95,10 @@ function selectColor(){
     
 }
 
-//if color wheel is selected then change the dropdown menu to select and call selectColor()
+//if color wheel is changed then change the dropdown menu to select and call selectColor()
 function selectColorWheel(){
     let selectInput = document.getElementById("selectedColorId");
-    selectInput.value = "SELECT";
+    selectInput.value = "COLOR WHEEL";
     selectColor();    
 }
 
