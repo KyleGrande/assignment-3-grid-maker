@@ -63,7 +63,7 @@ function removeC() {
     //and removes all rows to reset the table
     if (numCols === 0){
         numRows=0;
-        while(table.rows.ngth > 0){
+        while(table.rows.length > 0){
             table.deleteRow(0);
         }
         return;
