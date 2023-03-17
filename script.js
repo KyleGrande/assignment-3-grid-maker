@@ -45,12 +45,36 @@ function addC() {
 
 // Remove a row
 function removeR() {
-    alert("Clicked Remove Row"); // Replace this line with your code.
+
+    //checks if there are no rows if so returns to prevent negative rows
+    if (numRows === 0){
+        return;
+    }
+
+    //remove a row from the table and decrement numRows
+    numRows -= 1;
+    table.deleteRow(-1);
 }
 
 // Remove a column
 function removeC() {
-    alert("Clicked Remove Col"); // Replace this line with your code.
+
+    //checks if there are no columns if so returns to prevent negative columns
+    //and removes all rows to reset the table
+    if (numCols === 0){
+        numRows=0;
+        while(table.rows.ngth > 0){
+            table.deleteRow(0);
+        }
+        return;
+    }
+
+    //remove a column from the table and decrement numCols
+    numCols -= 1;
+    for (let i = 0; i < tableRow.length; i++) {
+        tableRow[i].deleteCell(-1);
+    }
+
 }
 
 // Set global variable for selected color
