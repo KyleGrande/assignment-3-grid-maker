@@ -104,15 +104,41 @@ function selectColorWheel(){
 
 // Fill all uncolored cells
 function fillU(){
-    alert("Clicked Fill All Uncolored"); // Replace this line with your code.
+
+    //get all cells in the table
+    let cells = document.getElementsByTagName("td");
+
+    //loop through all cells
+    for (let i = 0; i < cells.length; i++){
+        //if the cell is not colored then color it
+        if (!cells[i].style.backgroundColor){
+            cells[i].style.backgroundColor = colorSelected;
+        }
+    }
 }
 
 // Fill all cells
 function fillAll(){
-    alert("Clicked Fill All"); // Replace this line with your code.
+
+    //get all cells in the table
+    let cells = document.getElementsByTagName("td");
+
+    //loop through all cells
+    for (let i = 0; i < cells.length; i++){
+        //color all cells
+        cells[i].style.backgroundColor = colorSelected;
+    }
 }
 
 // Clear all cells
 function clearAll(){
-    alert("Clicked Clear All"); // Replace this line with your code.
+
+    //get all cells in the table
+    let cells = document.getElementsByTagName("td");
+
+    //loop through all cells
+    for (let i = 0; i < cells.length; i++){
+        //clear all cells
+        cells[i].style.removeProperty('background-color');
+    }
 }
