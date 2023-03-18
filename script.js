@@ -16,12 +16,13 @@ function addR() {
 
     //add a row to the table and increment numRows
     numRows += 1;
-    addRow = table.insertRow();
+    let addRow = table.insertRow();
 
-    //then add a cell to the row for num of columns
-    let addCol;
+    //add a cell to the row for num of columns
     for(let i=0; i<= numCols; i++){
-        addCol = addRow.insertCell();
+        newCell = addRow.insertCell();
+        //add event listener to each cell to change color
+        newCell.addEventListener("click", fillCell, false);
     }
 }
 
@@ -41,6 +42,9 @@ function addC() {
     //then add a cell to the row for num of rows
     for (let i = 0; i < tableRow.length; i++) {
         let newCell = tableRow[i].insertCell();
+        //add event listener to each cell to change color
+        newCell.addEventListener("click", fillCell, false);
+
     }
 }
 
@@ -100,6 +104,12 @@ function selectColorWheel(){
     let selectInput = document.getElementById("selectedColorId");
     selectInput.value = "COLOR WHEEL";
     selectColor();    
+}
+
+// Fill a single cell
+function fillCell(){
+    //get the cell that was clicked
+    this.style.backgroundColor = colorSelected;
 }
 
 // Fill all uncolored cells
